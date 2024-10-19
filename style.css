@@ -71,7 +71,6 @@ nav ul li a span:hover {
 }
 
 main {
-    min-height: 100vh;
     padding-top: 80px; /* Padding to prevent content from overlapping with sticky header */
 }
 
@@ -175,48 +174,55 @@ main {
     height: 300px;
 }
 
-/* Team Section */
 .team-section {
     padding: 50px 20px;
-    background-color: #f9f9f9;
+    background-color: #f0efeb;
     text-align: center;
 }
 
 .team-section h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
     color: #2C5F2D;
-    margin-bottom: 20px;
 }
 
 .team-cards {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .team-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
     padding: 20px;
     text-align: center;
-    flex: 1;
-    min-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
 }
 
 .team-card img {
-    max-width: 100px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
 .team-card h3 {
+    font-size: 1.3em;
     color: #2C5F2D;
-    margin-bottom: 5px;
 }
 
 .team-card p {
-    color: #6b6b6b;
+    font-size: 1em;
+    color: #97BC62;
 }
 /* Insights Section */
 #insights-section {
@@ -238,4 +244,42 @@ main {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding-right: 0;
+    }
 
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .recommendation-card {
+        width: 90%;
+    }
+
+    .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
