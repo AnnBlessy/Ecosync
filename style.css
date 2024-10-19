@@ -6,7 +6,7 @@
 
 body {
     background-color: #f0efeb;
-
+    font-family: 'Arial', sans-serif;
 }
 
 header, footer {
@@ -37,7 +37,7 @@ footer p {
 }
 
 .logo img {
-    height: 100px;
+    height: 80px;
 }
 
 nav ul {
@@ -71,10 +71,75 @@ nav ul li a span:hover {
 }
 
 main {
-    min-height: 200vh; /* Added for scroll effect demonstration */
-    padding-top: 150px; /* Padding to prevent content from overlapping with sticky header */
+    padding-top: 80px; /* Padding to prevent content from overlapping with sticky header */
 }
-/* Card Layout for Team Profiles */
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px auto;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%;
+    margin: 10px 0;
+}
+
+.card h2 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.chart-placeholder {
+    background-color: #e0e0e0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 4px;
+}
+
+.insights-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.insights-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.recommendation-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.recommendation-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.recommendation-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.recommendation-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
 .team-section {
     padding: 50px 20px;
     background-color: #f0efeb;
@@ -124,4 +189,44 @@ main {
 .team-card p {
     font-size: 1em;
     color: #97BC62;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding-right: 0;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .recommendation-card {
+        width: 90%;
+    }
+
+    .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
 }
