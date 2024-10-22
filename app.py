@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestRegressor
 from flask import Flask, render_template, request, jsonify
 from tensorflow.keras.models import load_model
 from Elec_consumption import create_dashboard_plots  # Import your plotting functions
+import os  # To get the port number
 
 app = Flask(__name__)
 
@@ -162,4 +163,5 @@ def predictenergy():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
