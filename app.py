@@ -9,7 +9,9 @@ from sklearn.ensemble import RandomForestRegressor
 from flask import Flask, render_template, request, jsonify
 from tensorflow.keras.models import load_model
 from Elec_consumption import create_dashboard_plots  # Import your plotting functions
+
 import os  # To get the port number
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 app = Flask(__name__)
 
